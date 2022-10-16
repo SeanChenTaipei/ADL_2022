@@ -19,7 +19,7 @@ Above code will generate a folder named `cache`.
 ```
 bash ./download.sh 
 ```
-Pretrained model weights will be downloaded into a folder called `ckpt`.\\
+Pretrained model weights will be downloaded into a folder called `ckpt`.<br>
 Weights `ckpt/intent/intent_best_ckpt.tar` and `ckpt/slot/slot_best_ckpt.tar` correspondes to intent classification model and slot tagging model, respectively.
 
 
