@@ -1,20 +1,25 @@
-# Sample Code for Homework 1 ADL NTU
+# ADL HW1
 
 ## Environment
 ```shell
-# If you have conda, we recommend you to build a conda environment called "adl-hw1"
-make
+## If you want to run in a virtual env
+conda create --name adl-hw1 python=3.9
 conda activate adl-hw1
 pip install -r requirements.txt
-# Otherwise
-pip instsall -r requirements.in
 ```
 
-## Preprocessing
+## Download pretrained word embedding and Preprocessing
 ```shell
-# To preprocess intent detectiona and slot tagging datasets
+# To preprocess intent detection and slot tagging datasets
 bash preprocess.sh
 ```
+Above code will generate a folder named **cache**.
+
+## Download pretrained model weights
+```
+bash ./download.sh 
+```
+Pretrained model weights will be downloaded into a folder **ckpt**.
 
 ## Intent detection
 ```shell
