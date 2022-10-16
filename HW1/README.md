@@ -19,11 +19,24 @@ Above code will generate a folder named `cache`.
 ```
 bash ./download.sh 
 ```
-Pretrained model weights will be downloaded into a folder called `ckpt`.
+Pretrained model weights will be downloaded into a folder called `ckpt`.\\
 Weights `ckpt/intent/intent_best_ckpt.tar` and `ckpt/slot/slot_best_ckpt.tar` correspondes to intent classification model and slot tagging model, respectively.
 
 
-## Intent detection
+## Training
+- Intent classification
 ```shell
-python train_intent.py
+python train_intent.py --batch_size 32 --hidden_size 256 --num_layers 1 --bidirectional True --lr 0.001 --lr_decay 0.5 --num_epoch 30 --warm_up_step 0
+```
+- Slot tagging
+```shell
+python train_slot.py --batch_size 16 --hidden_size 256 --num_layers 2 --bidirectional True --lr 0.001 --lr_decay 0.8 --warm_up_step 0 --num_epoch 101
+```
+
+## Generate prediction
+```shell
+##Intent
+bash ./intent_cls.sh /data/intent/test.json pred_intent.csv
+##Slot
+bash ./slot_tag.sh /data/slot/test.json pred_slot.csv
 ```
