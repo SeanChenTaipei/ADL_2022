@@ -11,7 +11,7 @@ pip install -r requirements.txt
 ## Download pretrained word embedding and Preprocessing
 ```shell
 # To preprocess intent detection and slot tagging datasets
-bash preprocess.sh
+bash ./preprocess.sh
 ```
 Above code will generate a folder named `cache`.
 
