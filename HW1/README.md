@@ -13,13 +13,15 @@ pip install -r requirements.txt
 # To preprocess intent detection and slot tagging datasets
 bash preprocess.sh
 ```
-Above code will generate a folder named **cache**.
+Above code will generate a folder named `cache`.
 
 ## Download pretrained model weights
 ```
 bash ./download.sh 
 ```
-Pretrained model weights will be downloaded into a folder **ckpt**.
+Pretrained model weights will be downloaded into a folder called `ckpt`.
+Weights `ckpt/intent/intent_best_ckpt.tar` and `ckpt/slot/slot_best_ckpt.tar` correspondes to intent classification model and slot tagging model, respectively.
+
 
 ## Intent detection
 ```shell
