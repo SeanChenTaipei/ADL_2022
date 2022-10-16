@@ -1,5 +1,4 @@
-# NTU_ADL_2022
-Adaptive deep learning hws 2022 fall. 
+# Adaptive deep learning hws 2022 fall
 `For more details, please click into the HW folders.`
 
 ## HW1
