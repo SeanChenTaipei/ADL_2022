@@ -36,7 +36,10 @@ python train_slot.py --batch_size 16 --hidden_size 256 --num_layers 2 --bidirect
 ## Generate prediction
 ```shell
 ##Intent
-bash ./intent_cls.sh /data/intent/test.json pred_intent.csv
+bash ./intent_cls.sh ./data/intent/test.json pred_intent.csv
 ##Slot
-bash ./slot_tag.sh /data/slot/test.json pred_slot.csv
+bash ./slot_tag.sh ./data/slot/test.json pred_slot.csv
+
+## Slot eval data generation
+bash ./slot_tag.sh ./data/slot/eval.json eval.csv
 ```
