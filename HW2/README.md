@@ -1,4 +1,4 @@
-# ADL HW1
+# ADL HW2
 
 ## Environment
 ```shell
@@ -19,7 +19,7 @@ Pretrained model weights will be downloaded and unzip into 2 folder.<br>
 Checkpoint folders `mc_best_ckpt` and `qa_best_ckpt` correspondes to context selection model and question answering model, respectively.
 
 
-## Training (有空再放)
+## Training
 - Multiple Choice Model
 ```shell
 python run_swag_no_trainer.py -h # check out the arguments
