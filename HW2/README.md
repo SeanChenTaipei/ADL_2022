@@ -8,9 +8,6 @@ conda activate adl-hw2
 pip install -r requirements.txt
 ```
 
-## Download pretrained word embedding
-
-
 ## Download pretrained model weights
 ```
 bash ./download.sh 
@@ -23,6 +20,13 @@ Checkpoint folders `mc_best_ckpt` and `qa_best_ckpt` correspondes to context sel
 - Multiple Choice Model
 ```shell
 python run_swag_no_trainer.py -h # check out the arguments
+
+python run_qa_no_trainer.py --train_file <path/to/train> --validation_file <path/to/valid> \
+                            --test_file <path/to/test> --max_seq_length 512 \
+                            --model_name_or_path hfl/chinese-roberta-wwm-ext-large --per_device_train_batch_size 2 \
+                            --per_device_eval_bastch_size 2 --gradient_accumulation_steps 32 \
+                            --learning_rate 3e-5 --num_train_epochs 5 --num_warmup_steps 0 \
+                            --with_tracking --output_dir <output/path> --checkpointing_step epoch \
 ```
 - Question Answering Model
 ```shell
