@@ -31,6 +31,11 @@ python run_qa_no_trainer.py --train_file <path/to/train> --validation_file <path
 - Question Answering Model
 ```shell
 python run_qa_no_trainer.py -h # check out the arguments
+
+python run_swag_no_trainer.py --train_file <path/to/train> \
+                              --validation_file <path/to/valid> --max_length 512 \
+                              --model_name_or_path bert-base-chinese 
+                              --tokenizer_name bert-base-chinese
 ```
 
 ## Generate prediction
