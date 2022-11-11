@@ -16,6 +16,15 @@ Pretrained model weights will be downloaded and unzip into 2 folder.<br>
 Checkpoint folders `mc_best_ckpt` and `qa_best_ckpt` correspondes to context selection model and question answering model, respectively.
 
 
+## Data Preprocessing
+
+```shell
+## MC SWAG dataset gen
+python preprocess_mc.py --train_file ./data/train.json --validation_file ./data/valid.json --context_file ./data/context.json --test_file ./data/test.json --output_dir ./mc_data
+
+## QA SQuaD dataset gen
+python preprocess_qa.py --train_file ./data/train.json --validation_file ./data/valid.json --context_file ./data/context.json --output_dir ./qa_data
+```
 ## Training
 - Multiple Choice Model
 ```shell
