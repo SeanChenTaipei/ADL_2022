@@ -9,7 +9,7 @@
 - Leaderboard position: 30 / 296
 
 ## HW2
-[Report](https://hackmd.io/XFez8tuvStmb4UA0KjkIaA)
 
 [Kaggle for question answering](https://www.kaggle.com/competitions/ntu-adl-hw2-fall-2022/)
 - Leaderboard position: :cry: / 274
+- [Report](https://hackmd.io/XFez8tuvStmb4UA0KjkIaA)
