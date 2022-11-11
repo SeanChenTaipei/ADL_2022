@@ -26,16 +26,17 @@ python run_qa_no_trainer.py --train_file <path/to/train> --validation_file <path
                             --model_name_or_path hfl/chinese-roberta-wwm-ext-large --per_device_train_batch_size 2 \
                             --per_device_eval_bastch_size 2 --gradient_accumulation_steps 32 \
                             --learning_rate 3e-5 --num_train_epochs 5 --num_warmup_steps 0 \
-                            --with_tracking --output_dir <output/path> --checkpointing_step epoch \
+                            --with_tracking --output_dir <output/dir> --checkpointing_step epoch \
 ```
 - Question Answering Model
 ```shell
 python run_qa_no_trainer.py -h # check out the arguments
 
 python run_swag_no_trainer.py --train_file <path/to/train> \
-                              --validation_file <path/to/valid> --max_length 512 \
-                              --model_name_or_path bert-base-chinese 
-                              --tokenizer_name bert-base-chinese
+      --validation_file <path/to/valid> --max_length 512 \
+      --per_device_train_batch_size 32 --per_device_train_batch_size 2 --lr_scheduler_type cosine\
+      --model_name_or_path hfl/chinese-bert-wwm-ext --tokenizer_name bert-base-chinese \
+      --with_tracking --output_dir <output/dir>
 ```
 
 ## Generate prediction
