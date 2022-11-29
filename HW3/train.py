@@ -34,7 +34,7 @@ from transformers import (
 )
 
 torch.cuda.is_available()
-from metric import rouge_score
+from metric import *
 print("Cuda Available ? ", torch.cuda.is_available())
 
 logger = get_logger(__name__)
@@ -233,7 +233,7 @@ def main():
     accelerator = Accelerator(gradient_accumulation_steps=args.gradient_accumulation_steps, **accelerator_log_kwargs)
     # Make one log on every process with the configuration for debugging.
     
-    
+    # print("RL ? ", args.do_rl, args.with_tracking)
     os.makedirs(os.path.join(args.output_dir, "log_dir"), exist_ok=True)
     logging.basicConfig(
         filename=os.path.join(args.output_dir, "log_dir") + '/train.log',
@@ -511,13 +511,16 @@ def main():
                     generated_tokens, labels = accelerator.gather_for_metrics((generated_tokens, labels))
                     generated_tokens = generated_tokens.cpu().numpy()
                     labels = labels.cpu().numpy()
-                    
+                    if args.ignore_pad_token_for_loss:
+                        # Replace -100 in the labels as we can't decode them.
+                        labels = np.where(labels != -100, labels, tokenizer.pad_token_id)
                     ## Decode
                     if isinstance(generated_tokens, tuple):
                         generated_tokens = generated_tokens[0]
                     decoded_preds = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
                     decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
-                    loss = pg_loss(logits = outputs.logits, labels = batch["labels"], pred = decoded_preds, red = decoded_labels, weight=[0.3, 0.4, 0.3])
+                    loss = pg_loss(logits = outputs.logits, labels = batch["labels"], pred = decoded_preds,\
+                                   ref = decoded_labels, weight=[0.3, 0.4, 0.3])
                 else:
                     loss = outputs.loss
                     

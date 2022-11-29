@@ -30,7 +30,7 @@ python train.py --train_file ./data/train.jsonl --validation_file ./data/public.
                 --text_column 'maintext' --summary_column 'title' --num_warmup_steps 0 \
                 --output_dir ./sum_ckpt \ # output directory
                 --with_tracking --ignore_pad_token_for_loss True \
-                --do_rl \ # do rl or not
+                #--do_rl \ # do rl or not, trains very slow
 ```
 
 
