@@ -55,7 +55,7 @@ def parse_args():
     parser.add_argument(
         "--max_source_length",
         type=int,
-        default=384,
+        default=256,
         help=(
             "The maximum total input sequence length after "
             "tokenization.Sequences longer than this will be truncated, sequences shorter will be padded."
@@ -175,10 +175,10 @@ if __name__ == '__main__':
     padding = "max_length" if args.pad_to_max_length else False
     
     def parsing_text(input_txt):
-        input_txt = input_txt.lower()
-        input_txt = re.sub('\n', '', input_txt)
-        input_txt = re.sub(r'http\S+', '', input_txt)
-        
+        # input_txt = input_txt.lower()
+        # input_txt = re.sub('\n', '', input_txt)
+        # input_txt = re.sub(r'http\S+', '', input_txt)
+        return input_txt
     def preprocess_function(examples):
         inputs = examples[text_column]
         model_inputs = tokenizer(inputs, max_length=args.max_source_length, padding=padding, truncation=True)

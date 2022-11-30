@@ -520,7 +520,7 @@ def main():
                     decoded_preds = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
                     decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
                     loss = pg_loss(logits = outputs.logits, labels = batch["labels"], pred = decoded_preds,\
-                                   ref = decoded_labels, weight=[0.3, 0.4, 0.3])
+                                   ref = decoded_labels, weight=np.array([0.3, 0.4, 0.3]))
                 else:
                     loss = outputs.loss
                     
