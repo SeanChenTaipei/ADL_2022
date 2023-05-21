@@ -1,5 +1,5 @@
 # Adaptive deep learning 2022 fall
-`For more details, please click the HW folders and refer to report.pdf .`
+`For more details, please click the HW folders and refer to the reports.`
 
 ## HW1
 [Kaggle for intent classification](https://www.kaggle.com/competitions/intent-classification-ntu-adl-hw1-fall-2022/)
