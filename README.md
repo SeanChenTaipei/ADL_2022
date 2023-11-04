@@ -1,4 +1,4 @@
-# Adaptive deep learning 2022 fall
+# Applied deep learning 2022 fall
 `For more details, please click the HW folders and refer to the reports.`
 
 ## HW1
